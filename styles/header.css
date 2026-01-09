@@ -1,0 +1,150 @@
+.header {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-rows: 1fr min-content 1fr;
+}
+
+.header__rec {
+    position: absolute;
+    top: 0;
+    right: 30px;
+
+    text-transform: uppercase;
+
+    color: var(--accent-color);
+
+    font-size: 18px;
+    line-height: 1.39;
+}
+
+.header__rec::after {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+
+    width: 9px;
+    height: 9px;
+
+    content: '';
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.header__theme-menu {
+    margin: 65px 0;
+
+    justify-self: end;
+}
+
+.header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 5px 0 0 0;
+
+    list-style: none;
+
+    gap: 12px;
+}
+
+.header__theme-menu-button {
+    padding: 2px 12px;
+
+    cursor: pointer;
+
+    color: var(--menu-color);
+    border: none;
+    background: transparent;
+
+    font-size: 18px;
+    line-height: 1;
+}
+
+.header__theme-menu-button:hover {
+    outline: 1px solid var(--menu-hover-color);
+}
+
+.header__theme-menu-button:focus {
+    outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+    border-bottom: 1px solid var(--menu-color);
+}
+
+.header__theme-menu-button_active {
+    pointer-events: none;
+
+    outline: 1px solid var(--menu-color);
+}
+
+.header__title {
+    margin: -15px 0 0 0;
+
+    color: var(--title-color);
+    text-shadow: 4px 4px 0 var(--accent-color);
+
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    line-height: 0.825;
+
+    grid-row: 2;
+}
+
+.header__description {
+    align-self: center;
+
+    grid-row: 3;
+    justify-self: end;
+
+    margin-top: -25px;
+}
+
+.header__description-text {
+    margin: 5px 0 0 0;
+
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 23.4px;
+}
+
+.title-decor {
+    color: var(--decorated-text-color);
+    background-color: var(--accent-color);
+}
+
+@media (width >= 768px) {
+    .header__title {
+        margin: -40px -20px 0 -20px;
+        font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    }
+
+    .header__description {
+        margin-top: -46px;
+        max-width: 50%;
+    }
+
+    .header__theme-menu-list {
+        padding: 110px 0 0 0;
+    }
+}
+
+@media (width >= 1024px) {
+    .header__theme-menu {
+        margin: 0;
+
+        justify-self: center;
+    }
+
+    .header__theme-menu-list {
+        flex-direction: row;
+        padding: 0;
+    }
+}

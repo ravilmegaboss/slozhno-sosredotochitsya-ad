@@ -1,0 +1,49 @@
+.page {
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+    font-family: 'IBM Plex mono', monospace;
+}
+
+.decorated-zone {
+    position: relative;
+
+    display: grid;
+
+    min-height: calc(100vh - 40px);
+    margin: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.decorated-zone::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 25px;
+    height: 25px;
+
+    content: '';
+
+    border-top: 1px solid var(--decorated-zone-border-color, #ff0070);
+    border-right: 1px solid var(--decorated-zone-border-color, #ff0070);
+}
+
+.decorated-zone::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 25px;
+    height: 25px;
+
+    content: '';
+
+    border-bottom: 1px solid var(--decorated-zone-border-color, #ff0070);
+    border-left: 1px solid var(--decorated-zone-border-color, #ff0070);
+}
